@@ -10,15 +10,18 @@ public class Humain {
 		return nom;
 	}
 
-
 	public int getQuantite_argent() {
 		return quantite_argent;
+	}
+	
+	public void setQuantite_argent(int quantite_argent) {
+		this.quantite_argent = quantite_argent;
 	}
 
 	public Humain(String nom, String boissonfav, int quantite_argent) {
 		this.nom = nom;
 		this.boissonfav = boissonfav;
-		this.quantite_argent = quantite_argent;
+		this.setQuantite_argent(quantite_argent);
 	}
 	
 	public void parler(String texte) {
@@ -38,24 +41,25 @@ public class Humain {
 	}
 	
 	private void gagnerArgent(int gain) {
-		quantite_argent += gain;
+		setQuantite_argent(getQuantite_argent() + gain);
 	}
 	
 	private void perdreArgent(int perte) {
-		quantite_argent -= perte;
+		setQuantite_argent(getQuantite_argent() - perte);
 	}
 	
 	public void acheter(String bien, int prix) {
-		if (quantite_argent - prix < 0) {  
-			parler("Je n'ai plus que " + quantite_argent + 
+		if (getQuantite_argent() - prix < 0) {  
+			parler("Je n'ai plus que " + getQuantite_argent() + 
 					" sous en poche. Je ne peux même pas m'offrir " + bien + " à "
 					+ prix + " sous ");
 		}
 		else {
-			parler("J'ai " + quantite_argent + " en poche. Je vais pouvoir m'offrir "
+			parler("J'ai " + getQuantite_argent() + " en poche. Je vais pouvoir m'offrir "
 					+ bien + " à " + prix + " sous ");
 			perdreArgent(prix);
 		}
 		
 	}
+
 }
