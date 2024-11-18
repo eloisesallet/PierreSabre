@@ -43,11 +43,11 @@ public class Humain {
 		parler("Mmmmmmm, un bon verre de " + boissonfav + " ! GLOUPS ! ");
 	}
 	
-	private void gagnerArgent(int gain) {
+	public void gagnerArgent(int gain) {
 		setQuantite_argent(getQuantite_argent() + gain);
 	}
 	
-	private void perdreArgent(int perte) {
+	public void perdreArgent(int perte) {
 		setQuantite_argent(getQuantite_argent() - perte);
 	}
 	
