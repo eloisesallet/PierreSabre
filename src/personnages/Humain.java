@@ -72,7 +72,7 @@ public class Humain {
 		autreHumain.memoriser(this);
 	}
 	
-	private void memoriser(Humain humain) {
+	protected void memoriser(Humain humain) {
 		if(nbConnaissance == MAX) {
 			for(int i=0; i<nbConnaissance-1 ; i++) {
 				memoire[i]=memoire[i+1];
